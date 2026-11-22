@@ -11,7 +11,7 @@ float area_triangle(float a, float b) {
 }
 
 int definition_triangle() {
-	printf("Прямоугольный треугольник — это треугольник, у которого один из углов является прямым, то есть равен 90°");
+	printf("\nПрямоугольный треугольник — это треугольник, у которого один из углов является прямым, то есть равен 90°\n");
 
 	return 0;
 }
@@ -38,6 +38,42 @@ int draw_triangle(int a, char symbol) {
 
 int main() {
 	setlocale(LC_CTYPE, "RUS");
+
+    int a, b, a1, b1, option;
+    char symbol;
+
+    do {
+        printf("\n1 - Рассчитать площадь\n");
+        printf("2 - Определение фигуры\n");
+        printf("3 - Нарисовать фигуру\n");
+        printf("0 - Выход\n");
+        printf("Выберите действие: ");
+        scanf("%d", &option);
+
+        switch (option)
+        {
+        case 1:
+            printf("\nВведите размеры для первого катета -> ");
+            scanf("%d", &a);
+            printf("Введите размеры для второго катета -> ");
+            scanf("%d", &b);
+            printf("Площадь треугольника -> %f", area_triangle(a, b));
+            break;
+        case 2:
+            definition_triangle();
+            break;
+        case 3:
+            printf("\nВведите символ -> ");
+            scanf(" %c", &symbol);
+            printf("Введите размеры для первого катета -> ");
+            scanf("%d", &a);
+
+            draw_triangle(a, symbol);
+            break;
+        default:
+            break;
+        }
+    } while (option != 0);
 
 	return 0;
 }
