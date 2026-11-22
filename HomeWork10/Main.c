@@ -10,6 +10,12 @@ float area_triangle(float a, float b) {
 	return area;
 }
 
+int definition_triangle() {
+	printf("Прямоугольный треугольник — это треугольник, у которого один из углов является прямым, то есть равен 90°");
+
+	return 0;
+}
+
 int main() {
 	setlocale(LC_CTYPE, "RUS");
 
