@@ -36,6 +36,14 @@ int draw_triangle(int a, char symbol) {
     return 0;
 }
 
+float compare_triangle(int a, int b, int a1, int b1) {
+    float difference = 0;
+
+    difference = area_triangle(a, b) - area_triangle(a1, b1);
+
+    return difference;
+}
+
 int main() {
 	setlocale(LC_CTYPE, "RUS");
 
